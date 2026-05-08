@@ -1,11 +1,51 @@
-@import 'tailwindcss';
+/* --- ESTILOS PERSONALIZADOS COMPATIBLES --- */
 
-@source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
-@source '../../storage/framework/views/*.php';
-@source '../**/*.blade.php';
-@source '../**/*.js';
+/* Animación de entrada suave */
+.fade-in-up {
+    animation: fadeInUp 0.6s ease-out;
+}
 
-@theme {
-    --font-sans: 'Instrument Sans', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
-        'Segoe UI Symbol', 'Noto Color Emoji';
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Separador con texto "O" */
+.separator {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    color: #9ca3af;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    font-weight: bold;
+    margin: 1.5rem 0;
+}
+
+.separator::before, .separator::after {
+    content: '';
+    flex: 1;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.separator::before {
+    margin-right: .5em;
+}
+
+.separator::after {
+    margin-left: .5em;
+}
+
+/* Fondo con puntitos (como tenías en Tailwind) */
+body {
+    background-color: #f8fafc;
+    background-image: radial-gradient(#e5e7eb 1px, transparent 1px);
+    background-size: 20px 20px;
 }
